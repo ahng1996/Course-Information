@@ -19,14 +19,7 @@ angular.module('PortalApp')
     // Show loading animation
     $scope.portalHelpers.toggleLoading(true);
 
-  	$scope.checkInsert = function() {
-      if ($scope.insertValue.value == "") $scope.valid = false;
-      else $scope.valid = true;
-    }
-  
-  	$scope.checkInsert();
-  
-    // DATABASE EXAMPLE
+  	// DATABASE EXAMPLE
 
     $scope.getDbData = function () {
         $scope.portalHelpers.invokeServerFunction('getData').then(function (result) {
