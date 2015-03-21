@@ -19,6 +19,13 @@ angular.module('PortalApp')
     // Show loading animation
     $scope.portalHelpers.toggleLoading(true);
 
+  	$scope.checkInsert = function() {
+      if ($scope.insertValue.value == "") $scope.valid = false;
+      else $scope.valid = true;
+    }
+  
+  	$scope.checkInsert();
+  
     // DATABASE EXAMPLE
 
     $scope.getDbData = function () {
@@ -56,6 +63,8 @@ angular.module('PortalApp')
     $scope.showView3 = function () {
         $scope.portalHelpers.showView('view3.html', 3);
     }
+    
+    
 
     // PORTAL DATA SOURCE EXAMPLE
 
@@ -73,6 +82,8 @@ angular.module('PortalApp')
     $scope.portalHelpers.invokeServerFunction('getOpenData').then(function (result) {
       $scope.apiData = result;
     });  	
+  
+  	
   
   	
 }])
