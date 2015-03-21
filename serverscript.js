@@ -39,7 +39,7 @@ function insert() {
 // OPEN DATA API EXAMPLE
 
 function getOpenData() {
-    var apiKey = ""; // Paste your API key here.
+    var apiKey = "https://api.uwaterloo.ca/v2/courses/CS/136.json"; // Paste your API key here.
     if (apiKey == "")
         return '{"error":"No Api Key! Add your key in the server script file."}';
 
