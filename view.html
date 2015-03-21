@@ -23,20 +23,7 @@
   		</div>
   	
     <div widget-item link="http://www.ucalendar.uwaterloo.ca/1516/COURSE/course-{{item.subject}}.html" ng-repeat="item in apiData.data | filterBy: ['subject'] : insertValue.value track by $index" ng-if="insertValue.value.length > 1">{{item.subject}} - {{item.description}}</div>
-  	
     
-  	<!-- OPEN DATA API ACCESS-->  
-  
-	<div widget-section-header>Course Codes and Descriptions</div>
-    <div widget-item ng-if="apiData.error">
-        <div widget-sub-text>{{apiData.error}}</div>
-    </div>
-    <div widget-item ng-if="!apiData.error">
-        <div widget-sub-text>List of Course Descriptions:</div>
-      	<!--<div widget-text ng-repeat="item in apiData.data">{{item.subject}}</div>
-      	<div widget-text ng-repeat="item in apiData.data">{{item.description}}</div>-->
-  	</div>
-  
 </script>
   
   
