@@ -21,8 +21,8 @@
                 </div>
             </form>
   		</div>
-  	
-    <div widget-item ng-repeat="item in apiData.data | filterBy: ['subject'] : insertValue.value track by $index">{{item.subject}} - {{item.description}}</div>
+  	<div widget-item ng-repeat="item in extLink.data">{{item}}</div>
+    <div widget-item link="http://www.ucalendar.uwaterloo.ca/1516/COURSE/course-{{item.subject}}.html" ng-repeat="item in apiData.data | filterBy: ['subject'] : insertValue.value track by $index"> {{item.subject}} - {{item.description}}</div>
   	
   <!--startsWith:-->
   
