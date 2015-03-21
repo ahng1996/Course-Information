@@ -1,14 +1,51 @@
 <script type="text/ng-template" id="loading.html">
     <div widget-item>
         <div widget-sub-text>
-            Loading..
+            Loading...
         </div>
     </div>
 </script>
 
 <script type="text/ng-template" id="main.html">
 
-    <!-- DATABASE EXAMPLE -->
+  	<!-- PROMPT USER FOR COURSE CODE-->
+ 	 <div widget-section-header>Enter Course Code:</div>
+  		<div widget-item>
+      		<form class="form-inline" ng-submit="insertData()">
+       		   	<div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control" ng-model="insertValue.value" placeholder="Course code:" />
+                    <span class="input-group-btn" style="overflow:hidden;">
+                        <button class="btn btn-primary glyphicon glyphicon glyphicon-ok btn" type="submit" style="margin-top: -1px;">
+                        </button>
+                    </span>
+                </div>
+            </form>
+  		</div>
+  
+  	<div widget-item ng-repeat="item in openDataExampleData.data | filter: insertValue.value as results">{{item.subject}}</div>
+            
+    
+  	
+  
+  	<!-- OPEN DATA API ACCESS-->  
+  
+	<div widget-section-header>Course Codes and Descriptions</div>
+    <div widget-item ng-if="openDataExampleData.error">
+        <div widget-sub-text>{{openDataExampleData.error}}</div>
+    </div>
+    <div widget-item ng-if="!openDataExampleData.error">
+        <div widget-sub-text>List of Course Descriptions:</div>
+      	<div widget-text ng-repeat="item in openDataExampleData.data">{{item.subject}}</div>
+      	<div widget-text ng-repeat="item in openDataExampleData.data">{{item.description}}</div>
+  	</div>
+  
+</script>
+  
+  
+<!--  
+<script type="text/ng-template" id="main.html">
+
+    
     <div widget-section-header>Database test</div>
     <div ng-if="dbData.error">
         <div widget-item>
@@ -34,7 +71,7 @@
             <div widget-text>Value: {{item.value}}</div>
         </div>
     </div>
-    <!-- DETAILS VIEWS EXAMPLE -->
+    
 
     <div widget-section-header>Details View Example</div>
     <div widget-item icon-right="icon-angle-right" ng-click="showView2()" button>
@@ -42,18 +79,19 @@
         <div widget-sub-text>Click here to show view 2 in column 2</div>
     </div>
 
-    <!-- OPEN DATA API EXAMPLE -->
+   
 
     <div widget-section-header>Open Data API Example</div>
     <div widget-item ng-if="openDataExampleData.error">
         <div widget-sub-text>{{openDataExampleData.error}}</div>
     </div>
     <div widget-item ng-if="!openDataExampleData.error">
-        <div widget-sub-text>List of WatCard Locations:</div>
-        <div widget-text ng-repeat="item in openDataExampleData.data">{{item.vendor_name}}</div>
+        <div widget-sub-text>List of Course Descriptions:</div>
+      	<div widget-text ng-repeat="item in openDataExampleData.data">{{item.subject}}</div>
+      	<div widget-text ng-repeat="item in openDataExampleData.data">{{item.description}}</div>
     </div>
 
-    <!-- PORTAL DATA SOURCE EXAMPLE -->
+    
 
     <div widget-section-header>Title</div>
     <div ng-repeat="l in links['Student Services']">
@@ -62,7 +100,7 @@
         </div>
     </div>
 
-    <!-- CSS EXAMPLE -->
+    
 
     <div widget-section-header>CSS test</div>
     <div widget-item>
@@ -70,7 +108,7 @@
     </div>
 </script>
 
-<!-- VIEWS FOR THE "DETAILS VIEWS EXAMPLE" -->
+
 
 <script type="text/ng-template" id="view2.html">
     <div widget-section-header>View 2</div>
@@ -85,4 +123,5 @@
     <div widget-item>
         <div widget-text>This view is displayed in column 3</div>
     </div>
-</script>
+</script> 
+-->
