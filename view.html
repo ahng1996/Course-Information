@@ -21,22 +21,20 @@
                 </div>
             </form>
   		</div>
-  
-  	<div widget-item ng-repeat="item in openDataExampleData.data | filter: insertValue.value as results">{{item.subject}}</div>
-            
-    
+  	
+    <div widget-item ng-repeat="item in apiData  | filter:insertValue.value:true   track by $index">{{item}}</div>
   	
   
   	<!-- OPEN DATA API ACCESS-->  
   
 	<div widget-section-header>Course Codes and Descriptions</div>
-    <div widget-item ng-if="openDataExampleData.error">
-        <div widget-sub-text>{{openDataExampleData.error}}</div>
+    <div widget-item ng-if="apiData.error">
+        <div widget-sub-text>{{apiData.error}}</div>
     </div>
-    <div widget-item ng-if="!openDataExampleData.error">
+    <div widget-item ng-if="!apiData.error">
         <div widget-sub-text>List of Course Descriptions:</div>
-      	<div widget-text ng-repeat="item in openDataExampleData.data">{{item.subject}}</div>
-      	<div widget-text ng-repeat="item in openDataExampleData.data">{{item.description}}</div>
+      	<!--<div widget-text ng-repeat="item in apiData.data">{{item.subject}}</div>
+      	<div widget-text ng-repeat="item in apiData.data">{{item.description}}</div>-->
   	</div>
   
 </script>
