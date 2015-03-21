@@ -71,9 +71,9 @@ angular.module('PortalApp')
 
     // OPEN API EXAMPLE
     $scope.portalHelpers.invokeServerFunction('getOpenData').then(function (result) {
-        $scope.openDataExampleData = result;
-    });
-
+      $scope.apiData = Enumerable.From(result.data).Select("d => d.subject, d.description").ToArray();
+      console.log($scope.apiData);
+    });  	
 
 }])
 // Custom directive example
