@@ -6,7 +6,7 @@ angular.module('PortalApp')
 
     // Widget Configuration
     $scope.portalHelpers.config = {
-        "title": "Test Project",
+        "title": "Course Descriptions",
         "icon": "icon-bell"
     };
 
