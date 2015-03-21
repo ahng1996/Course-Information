@@ -39,9 +39,9 @@ function insert() {
 // OPEN DATA API EXAMPLE
 
 function getOpenData() {
-    var apiKey = "https://api.uwaterloo.ca/v2/courses/CS/136.json"; // Paste your API key here.
+    var apiKey = "4816c9b302412c1c0e5af0a20a1a45e4"; // Paste your API key here.
     if (apiKey == "")
         return '{"error":"No Api Key! Add your key in the server script file."}';
 
-    return proxy.GetProxy('https://api.uwaterloo.ca/v2/foodservices/watcard.json?key=' + apiKey);
+    return proxy.GetProxy('https://api.uwaterloo.ca/v2/codes/subjects.json?key=' + apiKey);
 }

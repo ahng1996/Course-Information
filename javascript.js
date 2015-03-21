@@ -6,8 +6,8 @@ angular.module('PortalApp')
 
     // Widget Configuration
     $scope.portalHelpers.config = {
-        "title": "Test Project",
-        "icon": "icon-bell"
+        "title": "Course Catalog",
+        "icon": "icon-book"
     };
 
     // Initialize input variable
@@ -19,7 +19,7 @@ angular.module('PortalApp')
     // Show loading animation
     $scope.portalHelpers.toggleLoading(true);
 
-    // DATABASE EXAMPLE
+  	// DATABASE EXAMPLE
 
     $scope.getDbData = function () {
         $scope.portalHelpers.invokeServerFunction('getData').then(function (result) {
@@ -56,6 +56,8 @@ angular.module('PortalApp')
     $scope.showView3 = function () {
         $scope.portalHelpers.showView('view3.html', 3);
     }
+    
+    
 
     // PORTAL DATA SOURCE EXAMPLE
 
@@ -71,10 +73,12 @@ angular.module('PortalApp')
 
     // OPEN API EXAMPLE
     $scope.portalHelpers.invokeServerFunction('getOpenData').then(function (result) {
-        $scope.openDataExampleData = result;
-    });
-
-
+      $scope.apiData = result;
+    });  	
+  
+  	
+  
+  	
 }])
 // Custom directive example
 .directive('DirectiveName', ['$http', function ($http) {
