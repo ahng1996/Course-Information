@@ -7,7 +7,7 @@ angular.module('PortalApp')
     // Widget Configuration
     $scope.portalHelpers.config = {
         "title": "Course Descriptions",
-        "icon": "icon-bell"
+        "icon": "icon-book"
     };
 
     // Initialize input variable
@@ -71,8 +71,7 @@ angular.module('PortalApp')
 
     // OPEN API EXAMPLE
     $scope.portalHelpers.invokeServerFunction('getOpenData').then(function (result) {
-      $scope.apiData = Enumerable.From(result.data).Select("d => d.subject, d.description").ToArray();
-      console.log($scope.apiData);
+      $scope.apiData = result;
     });  	
 
 }])
