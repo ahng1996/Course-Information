@@ -73,7 +73,8 @@ angular.module('PortalApp')
     $scope.portalHelpers.invokeServerFunction('getOpenData').then(function (result) {
       $scope.apiData = result;
     });  	
-
+  
+  	
 }])
 // Custom directive example
 .directive('DirectiveName', ['$http', function ($http) {
